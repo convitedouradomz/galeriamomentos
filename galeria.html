@@ -1,0 +1,2021 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Obrigado | Rafaela & Romeu · Galeria</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --mint: #40b988;
+        --mint-dark: #26874e;
+        --gold: #c8aa64;
+        --ink: #1a2a2f;
+        --sub: #5a6e6e;
+        --shadow: rgba(64, 185, 136, 0.15);
+      }
+
+      body {
+        background: linear-gradient(145deg, #e8f5ef 0%, #a9ffdb 100%);
+        font-family: "Inter", sans-serif;
+        color: var(--ink);
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDYiLz48L3N2Zz4=");
+        opacity: 0.06;
+      }
+
+      .floating-heart {
+        position: fixed;
+        font-size: 0.8rem;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 2;
+        color: var(--gold);
+      }
+      .fh1,
+      .fh2,
+      .fh3,
+      .fh4,
+      .fh5 {
+        left: -30px;
+        animation: floatLR 24s ease-in-out infinite;
+      }
+      .fh1 {
+        top: 12%;
+        animation-duration: 26s;
+        animation-delay: 0s;
+      }
+      .fh2 {
+        top: 28%;
+        animation-duration: 20s;
+        animation-delay: 3s;
+      }
+      .fh3 {
+        top: 46%;
+        animation-duration: 30s;
+        animation-delay: 1s;
+      }
+      .fh4 {
+        top: 64%;
+        animation-duration: 22s;
+        animation-delay: 5s;
+      }
+      .fh5 {
+        top: 80%;
+        animation-duration: 27s;
+        animation-delay: 2s;
+      }
+      @keyframes floatLR {
+        0% {
+          transform: translateX(0) translateY(0) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 0.35;
+        }
+        90% {
+          opacity: 0.15;
+        }
+        100% {
+          transform: translateX(calc(100vw + 60px)) translateY(-50px)
+            rotate(15deg);
+          opacity: 0;
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.6rem;
+        position: relative;
+        z-index: 3;
+      }
+      .container.centered {
+        max-width: 720px;
+        text-align: center;
+      }
+
+      .deco-line-gold {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          var(--gold),
+          transparent
+        );
+        width: 100px;
+        margin: 1.2rem auto;
+        position: relative;
+      }
+      .deco-line-gold::after {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(200, 170, 100, 0.5) 0%,
+          transparent 80%
+        );
+        animation: glow 3s infinite;
+      }
+      @keyframes glow {
+        0% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 0.8;
+        }
+        100% {
+          opacity: 0.3;
+        }
+      }
+
+      /* ==================== SELO ==================== */
+      .seal-scene {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1.6rem;
+        background: linear-gradient(
+          160deg,
+          #1a2a2f 0%,
+          #12241f 55%,
+          #0f1e22 100%
+        );
+        transition:
+          opacity 1s ease,
+          filter 0.8s ease,
+          visibility 1s;
+      }
+      .seal-scene.hide {
+        opacity: 0;
+        filter: blur(10px);
+        pointer-events: none;
+        visibility: hidden;
+      }
+      .seal-eyebrow {
+        font-family: "Inter", sans-serif;
+        font-size: 0.75rem;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: rgba(255, 245, 235, 0.85);
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.3s;
+      }
+      .seal-wrap {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 35% 30%,
+          #e6c98a,
+          var(--gold) 55%,
+          #a1793f 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow:
+          0 0 0 6px rgba(200, 170, 100, 0.15),
+          0 20px 50px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transform: scale(0.85);
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.6s;
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+      }
+      .seal-wrap:hover {
+        transform: scale(1.04);
+        box-shadow:
+          0 0 0 8px rgba(200, 170, 100, 0.22),
+          0 24px 55px rgba(0, 0, 0, 0.55);
+      }
+      .seal-wrap.cracking {
+        animation: crackPulse 0.5s ease;
+      }
+      @keyframes crackPulse {
+        0% {
+          transform: scale(1);
+        }
+        40% {
+          transform: scale(1.15);
+        }
+        100% {
+          transform: scale(1.6);
+          opacity: 0;
+        }
+      }
+      .seal-initials {
+        font-family: "Great Vibes", cursive;
+        font-size: 2.6rem;
+        color: #3f2c10;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+      }
+      .seal-hint {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        color: rgba(255, 250, 240, 0.85);
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.9s;
+      }
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ==================== MAIN ==================== */
+      .main-content {
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        padding-top: 4.5rem;
+        padding-bottom: 2rem;
+      }
+      .main-content.reveal {
+        opacity: 1;
+      }
+
+      .scene-block {
+        opacity: 0;
+        filter: blur(8px);
+        transform: translateY(30px);
+        transition:
+          opacity 1s cubic-bezier(0.25, 0.95, 0.4, 1.05),
+          transform 1s ease,
+          filter 0.8s ease;
+      }
+      .scene-block.visible {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+      }
+
+      .thanks-eyebrow {
+        font-family: "Inter", sans-serif;
+        font-size: 0.75rem;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: var(--mint-dark);
+        margin-bottom: 0.6rem;
+      }
+      .thanks-title {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: clamp(2rem, 8vw, 3rem);
+        color: var(--ink);
+        line-height: 1.15;
+        margin-bottom: 0.4rem;
+      }
+      .thanks-title .amp {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-weight: 400;
+        color: var(--gold);
+      }
+      .typewriter-area {
+        max-width: 600px;
+        margin: 1.4rem auto 0;
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: var(--sub);
+        min-height: 120px;
+      }
+      .signature-cursive {
+        font-family: "Great Vibes", cursive;
+        font-size: 2rem;
+        color: var(--gold);
+        margin-top: 1rem;
+        opacity: 0;
+        transition: opacity 1s ease 0.3s;
+      }
+      .signature-cursive.show {
+        opacity: 1;
+      }
+
+      /* ==================== GALERIA ==================== */
+      .gallery-section {
+        margin: 3rem 0 1rem;
+      }
+
+      .gallery-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+      .gallery-header .gallery-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        font-weight: 600;
+        color: var(--ink);
+      }
+      .gallery-header .gallery-sub {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        color: var(--sub);
+        font-style: italic;
+        margin-top: 0.3rem;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .foto-card {
+        background: white;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px var(--shadow);
+        transition: all 0.4s ease;
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+        animation: cardReveal 0.6s ease forwards;
+        cursor: pointer;
+        border: 1px solid rgba(200, 170, 100, 0.1);
+      }
+      .foto-card:hover {
+        transform: translateY(-8px) scale(1.01);
+        box-shadow: 0 20px 50px rgba(64, 185, 136, 0.2);
+        border-color: rgba(200, 170, 100, 0.3);
+      }
+      .foto-card:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      .foto-card:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .foto-card:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      .foto-card:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      .foto-card:nth-child(5) {
+        animation-delay: 0.25s;
+      }
+      .foto-card:nth-child(6) {
+        animation-delay: 0.3s;
+      }
+      .foto-card:nth-child(7) {
+        animation-delay: 0.35s;
+      }
+      .foto-card:nth-child(8) {
+        animation-delay: 0.4s;
+      }
+      .foto-card:nth-child(9) {
+        animation-delay: 0.45s;
+      }
+      .foto-card:nth-child(10) {
+        animation-delay: 0.5s;
+      }
+
+      @keyframes cardReveal {
+        0% {
+          opacity: 0;
+          transform: scale(0.95) translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      .foto-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+        background: #f0f5f3;
+      }
+      .foto-card:hover img {
+        transform: scale(1.03);
+      }
+
+      .foto-card .info {
+        padding: 1rem 1.2rem 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .foto-card .info .nome {
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        font-size: 1rem;
+        color: var(--mint-dark);
+      }
+      .foto-card .info .nome i {
+        font-size: 0.8rem;
+        margin-right: 0.3rem;
+        color: #e74c3c;
+      }
+      .foto-card .info .data {
+        font-size: 0.7rem;
+        color: #8a9aa0;
+        font-family: "Inter", sans-serif;
+      }
+
+      .loading-placeholder {
+        text-align: center;
+        grid-column: 1 / -1;
+        padding: 3rem;
+        color: var(--sub);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.2rem;
+      }
+      .loading-placeholder i {
+        color: var(--mint);
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      .memory-card {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: 40px;
+        padding: 2rem 1.6rem;
+        max-width: 600px;
+        margin: 3rem auto 0;
+        border: 1px solid rgba(64, 185, 136, 0.25);
+        box-shadow: 0 20px 40px var(--shadow);
+        text-align: center;
+      }
+      .memory-quote {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1rem;
+        color: var(--sub);
+        line-height: 1.7;
+      }
+      .memory-hearts {
+        color: var(--gold);
+        margin-top: 0.8rem;
+        font-size: 1.1rem;
+        letter-spacing: 6px;
+      }
+
+      /* ==================== LIGHTBOX ==================== */
+      .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.92);
+        backdrop-filter: blur(12px);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+      .lightbox.ativo {
+        display: flex;
+        opacity: 1;
+      }
+      .lightbox .close {
+        position: absolute;
+        top: 25px;
+        right: 30px;
+        font-size: 2.5rem;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.3s;
+        z-index: 10;
+      }
+      .lightbox .close:hover {
+        transform: rotate(90deg);
+      }
+      .lightbox img {
+        max-width: 90%;
+        max-height: 85vh;
+        border-radius: 20px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        object-fit: contain;
+      }
+      .lightbox .legenda {
+        position: absolute;
+        bottom: 40px;
+        color: rgba(255, 255, 255, 0.7);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+      .lightbox .legenda i {
+        color: #e74c3c;
+        margin-right: 0.5rem;
+      }
+
+      /* ==================== FOOTER ==================== */
+      footer {
+        width: 100%;
+        background: linear-gradient(135deg, #1a2a2f 0%, #0f1e22 100%);
+        padding: 3rem 2rem;
+        text-align: center;
+        margin-top: 3.5rem;
+        position: relative;
+      }
+      footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--mint),
+          var(--gold),
+          var(--mint),
+          transparent
+        );
+      }
+      .footer-names {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        font-family: "Playfair Display", serif;
+        font-size: 1.1rem;
+        color: var(--mint);
+        margin-bottom: 0.4rem;
+      }
+      .footer-date {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: var(--gold);
+        letter-spacing: 3px;
+        margin-bottom: 1.2rem;
+      }
+      .footer-credit {
+        font-family: "Inter", sans-serif;
+        font-size: 0.75rem;
+        color: #8a9aa0;
+        margin-bottom: 1rem;
+      }
+      .footer-social a {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: "Inter", sans-serif;
+        font-size: 0.8rem;
+        color: var(--mint);
+        text-decoration: none;
+        padding: 0.5rem 1.1rem;
+        border: 1px solid rgba(64, 185, 136, 0.35);
+        border-radius: 60px;
+        transition: all 0.3s;
+      }
+      .footer-social a:hover {
+        background: rgba(64, 185, 136, 0.12);
+        border-color: var(--mint);
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 700px) {
+        .seal-wrap {
+          width: 120px;
+          height: 120px;
+        }
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+        .foto-card img {
+          height: 200px;
+        }
+        .container {
+          padding: 0 1rem;
+        }
+        .lightbox img {
+          max-width: 95%;
+          max-height: 70vh;
+        }
+        .lightbox .close {
+          top: 15px;
+          right: 20px;
+          font-size: 2rem;
+        }
+      }
+      @media (max-width: 480px) {
+        .gallery-grid {
+          grid-template-columns: 1fr;
+        }
+        .foto-card img {
+          height: 250px;
+        }
+      }
+      /* ==================== SELO COM CAPA ==================== */
+      .seal-scene {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: linear-gradient(
+          160deg,
+          #1a2a2f 0%,
+          #12241f 55%,
+          #0f1e22 100%
+        );
+        transition:
+          opacity 1s ease,
+          filter 0.8s ease,
+          visibility 1s;
+        padding: 2rem;
+      }
+      .seal-scene.hide {
+        opacity: 0;
+        filter: blur(10px);
+        pointer-events: none;
+        visibility: hidden;
+      }
+
+      .seal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        max-width: 700px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Badge */
+      .seal-badge {
+        font-family: "Inter", sans-serif;
+        font-size: 0.75rem;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: rgba(255, 245, 235, 0.85);
+        background: rgba(255, 255, 255, 0.05);
+        padding: 0.4rem 1.5rem;
+        border-radius: 60px;
+        border: 1px solid rgba(200, 170, 100, 0.2);
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.2s;
+      }
+
+      /* Título */
+      .seal-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.8rem, 10vw, 4.5rem);
+        font-weight: 600;
+        color: #ffffff;
+        line-height: 1.1;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.4s;
+      }
+      .seal-title .seal-amp {
+        font-family: "Great Vibes", cursive;
+        font-weight: 400;
+        color: #c8aa64;
+        font-size: 1.1em;
+      }
+
+      /* Linha dourada */
+      .seal-divider {
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          #c8aa64,
+          #c8aa64,
+          transparent
+        );
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.6s;
+        margin: 0.2rem 0;
+      }
+
+      /* Subtítulo */
+      .seal-subtitle {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 400;
+        letter-spacing: 3px;
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.7s;
+      }
+
+      /* Data */
+      .seal-date {
+        font-family: "Inter", sans-serif;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.6);
+        letter-spacing: 2px;
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 0.9s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .seal-date i {
+        color: #c8aa64;
+      }
+      .seal-date .seal-heart-icon {
+        color: #e74c3c;
+        font-size: 0.7rem;
+        margin: 0 0.2rem;
+      }
+
+      /* Selo dourado */
+      .seal-wrap {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 35% 30%,
+          #e6c98a,
+          #c8aa64 55%,
+          #a1793f 100%
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow:
+          0 0 0 6px rgba(200, 170, 100, 0.15),
+          0 20px 50px rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        transform: scale(0.85);
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 1.1s;
+        transition:
+          transform 0.4s ease,
+          box-shadow 0.4s ease;
+        margin: 0.5rem 0;
+      }
+      .seal-wrap:hover {
+        transform: scale(1.04);
+        box-shadow:
+          0 0 0 8px rgba(200, 170, 100, 0.22),
+          0 24px 55px rgba(0, 0, 0, 0.55);
+      }
+      .seal-wrap.cracking {
+        animation: crackPulse 0.5s ease;
+      }
+      @keyframes crackPulse {
+        0% {
+          transform: scale(1);
+        }
+        40% {
+          transform: scale(1.15);
+        }
+        100% {
+          transform: scale(1.6);
+          opacity: 0;
+        }
+      }
+      .seal-initials {
+        font-family: "Great Vibes", cursive;
+        font-size: 2.8rem;
+        color: #3f2c10;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.25);
+      }
+
+      /* Instrução */
+      .seal-hint {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 0.9rem;
+        color: rgba(255, 250, 240, 0.7);
+        opacity: 0;
+        animation: fadeUp 1s ease forwards;
+        animation-delay: 1.4s;
+      }
+
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .foto-card .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.2rem 1.2rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .foto-card .info .nome {
+        flex: 1;
+      }
+
+      .btn-download {
+        background: none;
+        border: none;
+        color: var(--mint);
+        cursor: pointer;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+        padding: 0.3rem 0.6rem;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn-download:hover {
+        background: rgba(64, 185, 136, 0.1);
+        transform: scale(1.1);
+        color: var(--mint-dark);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="floating-heart fh1">❤</div>
+    <div class="floating-heart fh2">❤</div>
+    <div class="floating-heart fh3">❤</div>
+    <div class="floating-heart fh4">❤</div>
+    <div class="floating-heart fh5">❤</div>
+
+    <!-- ==================== SELO COM CAPA ==================== -->
+    <div class="seal-scene" id="sealScene">
+      <div class="seal-content">
+        <!-- Badge superior -->
+        <div class="seal-badge">📸 Momentos Inesquecíveis</div>
+
+        <!-- Título principal -->
+        <h1 class="seal-title">
+          Rafaela <span class="seal-amp">&amp;</span> Romeu
+        </h1>
+
+        <!-- Linha dourada -->
+        <div class="seal-divider"></div>
+
+        <!-- Subtítulo -->
+        <p class="seal-subtitle">O nosso noivado em imagens</p>
+
+        <!-- Data e local -->
+        <p class="seal-date">
+          <i class="fas fa-calendar-alt"></i> 11 de Julho de 2026
+          <span class="seal-heart-icon"><i class="fas fa-heart"></i></span>
+          <i class="fas fa-map-marker-alt"></i> Guava, Maputo
+        </p>
+
+        <!-- SELO DOURADO -->
+        <div class="seal-wrap" id="sealBtn">
+          <div class="seal-initials">R&amp;R</div>
+        </div>
+        <img
+          src="images/logo.png"
+          alt="Logo"
+          style="
+            width: 90px;
+            margin-top: 0.8rem;
+            opacity: 0;
+            animation: fadeUp 1s ease forwards;
+            animation-delay: 1.3s;
+          "
+        />
+        <!-- Instrução -->
+        <p class="seal-hint">toque no selo para abrir</p>
+      </div>
+    </div>
+
+    <!-- ==================== CONTEÚDO ==================== -->
+    <div class="main-content" id="mainContent">
+      <div class="container centered scene-block" id="thanksScene">
+        <div class="thanks-eyebrow">
+          de Rafaela <span class="amp">&</span> Romeu
+        </div>
+        <div class="thanks-title">
+          Obrigado por <span class="amp">celebrarem</span><br />connosco
+        </div>
+        <div class="deco-line-gold"></div>
+        <div class="typewriter-area" id="typewriterArea"></div>
+        <div class="signature-cursive" id="signature">Rafaela & Romeu</div>
+      </div>
+
+      <!-- ==================== GALERIA ==================== -->
+      <section class="container gallery-section scene-block" id="galleryScene">
+        <div class="gallery-header">
+          <div class="gallery-title">📸 Os momentos do nosso dia</div>
+          <div class="gallery-sub">
+            50 momentos especiais, capturados com amor
+          </div>
+          <div class="deco-line-gold"></div>
+        </div>
+
+        <div class="gallery-grid" id="galeriaGrid">
+          <div class="loading-placeholder">
+            <i class="fas fa-spinner fa-pulse"></i>
+            A carregar os momentos especiais...
+          </div>
+        </div>
+
+        <div class="memory-card">
+          <div class="memory-quote">
+            "Cada abraço, cada sorriso e cada palavra de carinho ficou guardado
+            no coração — e agora, também em imagem."
+          </div>
+          <div class="memory-hearts">♡ ♡ ♡</div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-names">
+          <span>Rafaela Camila</span>
+          <i class="fas fa-heart" style="color: #e74c3c; font-size: 0.8rem"></i>
+          <span>Romeu Fernandes</span>
+        </div>
+        <div class="footer-date">11.07.2026</div>
+        <p class="footer-credit">Com carinho, Convite Dourado</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/convitedouradomz" target="_blank">
+            <i class="fab fa-instagram"></i> @convitedouradomz
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ==================== LIGHTBOX ==================== -->
+    <div class="lightbox" id="lightbox">
+      <span class="close" id="closeLightbox">&times;</span>
+      <img id="lightboxImg" src="" alt="Momento especial" />
+      <div class="legenda" id="lightboxLegenda">
+        <i class="fas fa-heart"></i> Um momento especial do nosso noivado
+      </div>
+    </div>
+
+    <script>
+      // ================================================================
+      // LISTA DE FOTOS - COLE AQUI OS IDs DAS SUAS FOTOS
+      // ================================================================
+      const fotos = [
+        {
+          url: "images/WhatsApp Image 2026-07-21 at 16.29.27 (2).jpeg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/WhatsApp Image 2026-07-21 at 16.29.27 (1).jpeg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/WhatsApp Image 2026-07-21 at 16.29.27.jpeg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2806.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2811.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2816.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3037.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3064.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2863.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2870.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2880.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2808.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2813.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2882.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2818.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2867.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2876.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2807.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2866.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2889.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2892.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2888.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2946.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2960.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2846.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2852.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2887.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2897.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2986.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2812.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2828.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2959.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2859.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2890.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2941.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2830.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2949.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2820.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2935.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2895.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2948.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2845.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2974.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2950.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2975.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2819.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2855.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2899.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2947.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2951.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2958.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2823.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3050.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2893.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2919.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2963.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2827.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2914.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2961.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2962.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3006.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3033.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2872.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2955.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2976.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2869.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2885.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2969.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3052.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2936.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2954.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2973.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2977.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2938.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2964.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2967.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2968.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2849.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2900.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3025.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2839.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2875.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2980.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2985.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2858.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3013.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3038.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2825.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2847.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2871.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2883.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2865.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2971.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3005.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2821.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2856.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3055.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2848.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3004.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2853.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2940.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2981.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2842.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2945.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2864.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2952.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3071.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2910.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2965.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2862.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2868.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3008.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3044.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2832.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3051.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2837.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2836.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3047.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3054.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2884.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3009.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3066.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2928.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2840.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3012.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3075.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2841.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3060.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2920.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3041.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3063.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2879.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2923.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2972.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3021.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3078.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2854.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2881.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3031.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3074.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2918.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2987.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3007.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3018.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3077.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2886.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2979.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2984.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3079.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_2843.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3016.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3022.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3030.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3062.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3024.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3026.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3039.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3061.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3070.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3029.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/DSC_3035.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/rafffa.png",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        { url: "images/Rafa.png", nome: "Rafaela & Romeu", data: "11.07.2026" },
+        {
+          url: "images/DSC_302dd9.jpg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/WhatsApp Image 2026-07-21 at 16.29.28 (7).jpeg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/WhatsApp Image 2026-07-21 at 16.29.28 (6).jpeg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/WhatsApp Image 2026-07-21 at 16.29.28 (5).jpeg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/WhatsApp Image 2026-07-21 at 16.29.28 (4).jpeg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/WhatsApp Image 2026-07-21 at 16.29.28 (3).jpeg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/WhatsApp Image 2026-07-21 at 16.29.28 (2).jpeg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/WhatsApp Image 2026-07-21 at 16.29.28 (1).jpeg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+        {
+          url: "images/WhatsApp Image 2026-07-21 at 16.29.28.jpeg",
+          nome: "Rafaela & Romeu",
+          data: "11.07.2026",
+        },
+      ];
+      // ================================================================
+      // RENDERIZAR GALERIA
+      // ================================================================
+      function renderizarGaleria(fotos) {
+        const grid = document.getElementById("galeriaGrid");
+        if (!grid) return;
+
+        if (!fotos || fotos.length === 0) {
+          grid.innerHTML = `
+      <div class="loading-placeholder">
+        <i class="fas fa-heart" style="color:#e74c3c;font-size:2rem;"></i>
+        Ainda não temos fotos... mas em breve estarão aqui!
+      </div>
+    `;
+          return;
+        }
+
+        grid.innerHTML = fotos
+          .map(
+            (foto, index) => `
+    <div class="foto-card" style="animation-delay: ${(index % 10) * 0.06}s">
+      <img src="${foto.url}" alt="${foto.nome}" loading="lazy" onclick="abrirLightbox('${foto.url}', '${foto.nome}')" />
+      <div class="info">
+        <span class="nome"><i class="fas fa-heart"></i> ${foto.nome}</span>
+        <span class="data">${foto.data}</span>
+        <button class="btn-download" onclick="baixarFoto('${foto.url}', '${foto.nome}')" title="Descarregar foto">
+          <i class="fas fa-download"></i>
+        </button>
+      </div>
+    </div>
+  `,
+          )
+          .join("");
+      }
+
+      // Função para baixar uma foto individual
+      function baixarFoto(url, nome) {
+        // Tenta baixar a imagem com fetch
+        fetch(url)
+          .then((response) => response.blob())
+          .then((blob) => {
+            const blobUrl = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = blobUrl;
+            link.download = `${nome.replace(/\s/g, "_")}.jpg`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+            console.log("✅ Download iniciado!");
+          })
+          .catch(() => {
+            // Fallback: abrir numa nova aba
+            console.warn("Download falhou, abrindo imagem...");
+            window.open(url, "_blank");
+          });
+      }
+      // ================================================================
+      // LIGHTBOX
+      // ================================================================
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightboxImg");
+      const lightboxLegenda = document.getElementById("lightboxLegenda");
+
+      window.abrirLightbox = function (url, nome) {
+        lightboxImg.src = url;
+        lightboxLegenda.innerHTML = `<i class="fas fa-heart"></i> ${nome} · 11.07.2026`;
+        lightbox.classList.add("ativo");
+        document.body.style.overflow = "hidden";
+      };
+
+      document.getElementById("closeLightbox").addEventListener("click", () => {
+        lightbox.classList.remove("ativo");
+        document.body.style.overflow = "";
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove("ativo");
+          document.body.style.overflow = "";
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          lightbox.classList.remove("ativo");
+          document.body.style.overflow = "";
+        }
+      });
+
+      // ================================================================
+      // SELO E ANIMAÇÕES
+      // ================================================================
+      const sealScene = document.getElementById("sealScene");
+      const sealBtn = document.getElementById("sealBtn");
+      const mainContent = document.getElementById("mainContent");
+      const thanksScene = document.getElementById("thanksScene");
+      const galleryScene = document.getElementById("galleryScene");
+      const typeEl = document.getElementById("typewriterArea");
+      const signature = document.getElementById("signature");
+
+      const introText =
+        "Não temos palavras suficientes para agradecer a forma como celebraram o início desta nova etapa connosco. Cada gesto, cada sorriso e cada abraço tornou este dia inesquecível.";
+
+      let idx = 0;
+      function slowType() {
+        if (idx < introText.length) {
+          typeEl.innerHTML += introText.charAt(idx);
+          idx++;
+          setTimeout(slowType, 28);
+        } else {
+          setTimeout(() => signature.classList.add("show"), 400);
+          setTimeout(() => galleryScene.classList.add("visible"), 900);
+        }
+      }
+
+      sealBtn.addEventListener("click", () => {
+        sealBtn.classList.add("cracking");
+        setTimeout(() => {
+          sealScene.classList.add("hide");
+          mainContent.classList.add("reveal");
+          setTimeout(() => thanksScene.classList.add("visible"), 300);
+          setTimeout(() => slowType(), 900);
+          // Carregar galeria depois de tudo
+          setTimeout(() => renderizarGaleria(fotos), 1200);
+        }, 450);
+      });
+
+      // ================================================================
+      // CARREGAR GALERIA (fallback)
+      // ================================================================
+      // Se o selo não for clicado, carregar após 5 segundos
+      setTimeout(() => {
+        if (
+          document
+            .getElementById("galeriaGrid")
+            .querySelector(".loading-placeholder")
+        ) {
+          renderizarGaleria(fotos);
+        }
+      }, 5000);
+    </script>
+  </body>
+</html>
